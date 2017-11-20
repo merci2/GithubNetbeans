@@ -10,25 +10,54 @@ import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
 
 /**
  *
  * @author ak
  */
-public class FXMLDocumentController implements Initializable {
+public class FXMLDocumentController  {
     
     @FXML
-    private Label label;
+    private Label lblHeadlineIMS;
     
     @FXML
-    private void handleButtonAction(ActionEvent event) {
-        System.out.println("Button geklickt.");
-        label.setText("Welcome Github. I came from Mac!");
+    private TableView tableViewIMS;
+    @FXML
+    private TableColumn colDt;
+    private TableColumn colEn;
+    
+    @FXML
+    private TextField tfDt;
+    private TextField tfEn;
+    
+    @FXML
+    private Button btnSpeichern, btnKorrigieren, btnLoeschen;
+    
+    @FXML
+    private void btnSpeichernAction(ActionEvent event) {
+        System.out.println("Speichern geklickt.");
+        //label.setText("Welcome Github. I came from Mac!");
     }
     
-    @Override
-    public void initialize(URL url, ResourceBundle rb) {
+    @FXML
+    private void btnKorrigierenAction(ActionEvent event) {
+        System.out.println("Korrigieren geklickt.");
+        //label.setText("Welcome Github. I came from Mac!");
+    }
+    
+        @FXML
+    private void btnLoeschenAction(ActionEvent event) {
+        System.out.println("Löschen geklickt.");
+        //label.setText("Welcome Github. I came from Mac!");
+    }
+    
+    @FXML
+    public void initialize() {
         // TODO
     }    
     
