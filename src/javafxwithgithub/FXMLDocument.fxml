@@ -9,17 +9,17 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane id="AnchorPane" prefHeight="566.0" prefWidth="700.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.65" fx:controller="javafxwithgithub.FXMLDocumentController">
+<AnchorPane id="AnchorPane" prefHeight="566.0" prefWidth="1000.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafxwithgithub.FXMLDocumentController">
     <children>
         <Label fx:id="lblHeadlineIMS" layoutX="7.0" minHeight="16" minWidth="69" prefHeight="48.0" prefWidth="594.0" text="Vokabel-Lernprogramm" />
-      <TabPane layoutX="13.0" layoutY="62.0" prefHeight="314.0" prefWidth="671.0" tabClosingPolicy="UNAVAILABLE">
+      <TabPane layoutX="13.0" layoutY="62.0" prefHeight="314.0" prefWidth="974.0" tabClosingPolicy="UNAVAILABLE">
         <tabs>
           <Tab text="IMS">
                <content>
-                  <TableView fx:id="tableViewIMS" prefHeight="281.0" prefWidth="609.0">
+                  <TableView fx:id="tableViewIMS" prefHeight="281.0" prefWidth="788.0">
                     <columns>
-                      <TableColumn fx:id="colDt" prefWidth="340.0" text="Deutsch" />
-                      <TableColumn fx:id="colEn" prefWidth="337.0" text="Englisch" />
+                      <TableColumn fx:id="colDt" prefWidth="487.0" text="Deutsch" />
+                      <TableColumn fx:id="colEn" prefWidth="487.0" text="Englisch" />
                     </columns>
                   </TableView>
                </content>
@@ -31,8 +31,8 @@
           </Tab>
         </tabs>
       </TabPane>
-      <TextField fx:id="tfDt" layoutX="14.0" layoutY="388.0" prefHeight="27.0" prefWidth="671.0" promptText="deutsch" />
-      <TextField fx:id="tfEn" layoutX="15.0" layoutY="425.0" prefHeight="27.0" prefWidth="671.0" promptText="englisch" />
+      <TextField fx:id="tfDt" layoutX="14.0" layoutY="388.0" prefHeight="27.0" prefWidth="974.0" promptText="deutsch" />
+      <TextField fx:id="tfEn" layoutX="15.0" layoutY="425.0" prefHeight="27.0" prefWidth="974.0" promptText="englisch" />
       <Button fx:id="btnSpeichern" layoutX="15.0" layoutY="467.0" mnemonicParsing="false" onAction="#btnSpeichernAction" text="Speichern" />
       <Button fx:id="btnKorrigieren" layoutX="109.0" layoutY="467.0" mnemonicParsing="false" onAction="#btnKorrigierenAction" text="Korrigieren" />
       <Button fx:id="btnLoeschen" layoutX="209.0" layoutY="467.0" mnemonicParsing="false" onAction="#btnLoeschenAction" text="Löschen" />

@@ -5,16 +5,15 @@
  */
 package javafxwithgithub;
 
-import java.net.URL;
-import java.util.ResourceBundle;
+import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
+import javafx.scene.control.cell.PropertyValueFactory;
 
 /**
  *
@@ -22,17 +21,23 @@ import javafx.scene.control.TextField;
  */
 public class FXMLDocumentController  {
     
+    public Dao dao;
+    
+   
+    
     @FXML
     private Label lblHeadlineIMS;
     
     @FXML
-    private TableView tableViewIMS;
+    private TableView<Datensatz> tableViewIMS;
     @FXML
-    private TableColumn colDt;
-    private TableColumn colEn;
+    private TableColumn<Datensatz, String> colDt;
+    @FXML
+    private TableColumn<Datensatz, String> colEn;
     
     @FXML
     private TextField tfDt;
+    @FXML
     private TextField tfEn;
     
     @FXML
@@ -41,7 +46,9 @@ public class FXMLDocumentController  {
     @FXML
     private void btnSpeichernAction(ActionEvent event) {
         System.out.println("Speichern geklickt.");
-        //label.setText("Welcome Github. I came from Mac!");
+        //label.setText("Welcome Github. I came from Mac!");  
+        dao.saveDatensatz(new Datensatz(tfDt.getText(), tfEn.getText()));
+        tableViewIMS.setItems(FXCollections.observableArrayList(dao.findAll()));
     }
     
     @FXML
@@ -56,9 +63,14 @@ public class FXMLDocumentController  {
         //label.setText("Welcome Github. I came from Mac!");
     }
     
-    @FXML
-    public void initialize() {
+     @FXML
+    public void initialize() 
+    {
         // TODO
-    }    
+        dao = new Dao();
+        tableViewIMS.setItems(FXCollections.observableArrayList(dao.findAll()));//??
+        colDt.setCellValueFactory(new PropertyValueFactory<>("vocD"));//String = wie in json = wie in Datensatz
+        colEn.setCellValueFactory(new PropertyValueFactory<>("vocE"));
+    }  
     
 }
